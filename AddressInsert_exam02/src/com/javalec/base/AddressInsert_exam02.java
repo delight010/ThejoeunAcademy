@@ -251,6 +251,12 @@ public class AddressInsert_exam02 {
 	private JLabel getLblNewLabel_5() {
 		if (lblNewLabel_5 == null) {
 			lblNewLabel_5 = new JLabel("관계:");
+			lblNewLabel_5.addMouseListener(new MouseAdapter() {
+				@Override
+				public void mouseClicked(MouseEvent e) {
+					JOptionPane.showMessageDialog(null, "이용할수없음");
+				}
+			});
 			lblNewLabel_5.setBounds(23, 383, 61, 16);
 		}
 		return lblNewLabel_5;
