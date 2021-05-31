@@ -1,0 +1,30 @@
+package com.aoslec.snackbar;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+
+import com.google.android.material.snackbar.Snackbar;
+
+public class MainActivity extends AppCompatActivity {
+
+    Button btnOK;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        btnOK = findViewById(R.id.button);
+        btnOK.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Snackbar.make(v,"Snackber를 눌렀습니다", Snackbar.LENGTH_SHORT).show();
+                //View v를 사용함, Toast는 MainActivity를 사용함
+            }
+        });
+
+    } // onCreate
+}//MainActivity

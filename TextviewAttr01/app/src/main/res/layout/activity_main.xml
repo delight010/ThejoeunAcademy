@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="---수평 입력 길이---"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Normal"
+        />
+    <EditText
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Scroll Horizontal"
+    android:scrollbars="vertical"
+    /><!-- 엔터를 쭉 눌러보기, 스크롤이 생김-->
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Single Line"
+        android:singleLine="true"
+        /><!-- 줄바꿈없이 1줄로만 나타남-->
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="aeiou"
+        android:digits="aeiou"
+        /><!-- 정규식 / 소문자 a,e,i,o,u만 입력가능-->
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="1234"
+        android:inputType="number"
+        /><!-- 숫자만 입력가능 -->
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="1234"
+        android:inputType="textPassword"
+        /><!-- 입력되는 값이 ***로 표기됨-->
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="selectAllOnFocus"
+        android:selectAllOnFocus="true"
+        /><!-- 클릭하면 해당 EditText값이 선택됨 -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="auto link text. https://www.naver.com naver home page. aaa@bbb.com mail address +82 10-1234-5678 phonenumber"
+        android:autoLink="web|email|phone"
+        /> <!-- link부분 하이퍼링크 -->
+
+</LinearLayout>

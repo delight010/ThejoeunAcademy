@@ -1,0 +1,2 @@
+rootProject.name = "Frame_Quiz2"
+include ':app'
