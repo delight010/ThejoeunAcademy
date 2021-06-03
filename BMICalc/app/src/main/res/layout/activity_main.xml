@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="성별을 선택하세요 : "
+        android:layout_gravity="center"
+        />
+        <RadioGroup
+            android:id="@+id/rg01"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <RadioButton
+                android:id="@+id/rb01"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="남"
+                />
+
+            <RadioButton
+                android:id="@+id/rb02"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="여" />
+
+        </RadioGroup>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="나이를 입력하세요 : "
+            />
+        <EditText
+            android:id="@+id/ETage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="나이를 입력하세요"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="당신의 키를 입력하세요 : "
+            />
+        <EditText
+            android:id="@+id/ETtall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="키(cm)"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="당신의 몸무게를 입력하세요 : "
+            />
+        <EditText
+            android:id="@+id/ETkg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="몸무게(kg)"
+            />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnBMI"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="계산하기"
+        />
+
+    <LinearLayout
+        android:id="@+id/resultLayout"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        >
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <TextView
+                android:id="@+id/resultBMI"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                />
+        </LinearLayout>
+        <GridView
+            android:id="@+id/gridView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:numColumns="3"
+            android:background="#2196F3"
+            />
+
+        <Gallery
+            android:id="@+id/gallery1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:spacing="5dp"
+            android:background="#00ff00"
+            />
+        <ImageView
+            android:id="@+id/ivIMG"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="20dp"
+            android:background="#FFEB3B"
+            />
+
+
+
+    </LinearLayout>
+
+
+</LinearLayout>
