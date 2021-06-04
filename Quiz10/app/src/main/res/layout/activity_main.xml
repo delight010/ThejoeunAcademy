@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="선택을 시작하시겠습니까?"
+        />
+
+    <CheckBox
+        android:id="@+id/cb1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="시작함"
+        />
+
+
+    <LinearLayout
+        android:id="@+id/layout1"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="좋아하는 애완동물은?"
+            />
+
+        <RadioGroup
+            android:id="@+id/rg01"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            >
+
+            <RadioButton
+                android:id="@+id/rbtn1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/btn01"
+                />
+            <RadioButton
+                android:id="@+id/rbtn2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/btn02"
+                />
+            <RadioButton
+                android:id="@+id/rbtn3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/btn03"
+                />
+            <Button
+                android:id="@+id/btnOK"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="선택 완료"
+                />
+        </RadioGroup>
+
+        <FrameLayout
+            android:id="@+id/layout2"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <ImageView
+                android:id="@+id/i01"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/i01"
+                android:maxWidth="150dp"
+                android:maxHeight="250dp"
+                android:adjustViewBounds="true"
+                android:visibility="invisible"
+                />
+            <!-- adjustViewBounds="true"를 해야 사이즈가 적용이 됨 -->
+            <ImageView
+                android:id="@+id/i02"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/i02"
+                android:maxWidth="150dp"
+                android:maxHeight="250dp"
+                android:adjustViewBounds="true"
+                android:visibility="invisible"
+                />
+            <!-- adjustViewBounds="true"를 해야 사이즈가 적용이 됨 -->
+            <ImageView
+                android:id="@+id/i03"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/i03"
+                android:maxWidth="150dp"
+                android:maxHeight="250dp"
+                android:adjustViewBounds="true"
+                android:visibility="invisible"
+                />
+            <!-- adjustViewBounds="true"를 해야 사이즈가 적용이 됨 -->
+
+            <ImageView
+                android:id="@+id/imgPet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"
+                />
+
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+
+
+
+
+</LinearLayout>

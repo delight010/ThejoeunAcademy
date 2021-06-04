@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Shadow Text"
+        android:textSize="40dp"
+        android:textColor="#ffffff"
+        android:shadowColor="#0000ff"
+        android:shadowDx="3.0"
+        android:shadowDy="3.0"
+        android:shadowRadius="3.0"
+        /><!--그림자 설정 -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Wide Text"
+        android:textSize="30dp"
+        android:textScaleX="2.0"
+        />
+    <TextView
+        android:background="#ff0000"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세. 대한 사람 대한으로 보전하세"
+        />
+    <TextView
+        android:background="#00ff00"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세. 대한 사람 대한으로 보전하세"
+        android:lineSpacingMultiplier="1.5"
+        /><!-- 줄간격 -->
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Characters"
+        android:inputType="textCapCharacters"
+        /><!-- 키보드 대문자 전환(default) -->
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Characters"
+        android:inputType="textCapWords"
+        /><!-- 단어의 시작을 대문자로 함 (띄어쓰기 단위)-->
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Characters"
+        android:inputType="textCapSentences"
+        /><!-- 단어의 시작을 대문자로 함 (.으로 끝나는 문장 단위) -->
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Hint"
+        android:textColorHint="#00ff00"
+        android:inputType="textCapCharacters"
+        /><!-- Placeholder. 색깔도 지정 가능 -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세. 대한 사람 대한으로 보전하세"
+        android:singleLine="true"
+        android:ellipsize="start"
+        /><!-- ellipsize는 생략할 부분을 선택.
+        start는 앞부분을 생략
+        반드시 singlieLine을 사용해야함-->
+
+
+
+
+</LinearLayout>
