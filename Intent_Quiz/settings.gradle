@@ -1,0 +1,2 @@
+rootProject.name = "Intent_Quiz"
+include ':app'
