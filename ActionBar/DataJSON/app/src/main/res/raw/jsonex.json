@@ -1,0 +1,26 @@
+{
+  "members_info" : [
+    {
+      "name" : "James",
+      "age" : 20,
+      "hobbies" : ["swimming","cooking"],
+      "info" :
+      {
+        "no" : 1,
+        "id" : "abcd",
+        "pw" : "1234"
+      }
+    },
+    {
+      "name" : "Cathy",
+      "age" : 21,
+      "hobbies" : ["reading","playing the piano"],
+      "info" :
+      {
+        "no" : 2,
+        "id" : "cathy",
+        "pw" : "1234"
+      }
+    }
+  ]
+}
