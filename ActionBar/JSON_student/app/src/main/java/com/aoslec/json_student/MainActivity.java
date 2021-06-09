@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
             //Json 시작
             JSONObject jsonObject = new JSONObject(stringBuffer.toString());
             JSONArray jsonArray = new JSONArray(jsonObject.getString("students_info"));
-            // json의 내용 주
+            // json의 내용 주의
             //대괄호를 구분하여 확인함(1세트, 2세트...)
             for(int i=0; i<jsonArray.length(); i++){
                 JSONObject jsonObject1 = (JSONObject)jsonArray.get(i);
