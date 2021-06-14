@@ -3,6 +3,7 @@ package com.aoslec.db_crud.NetworkTask;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.AsyncTask;
+import android.util.Log;
 
 import com.aoslec.db_crud.Bean.Student;
 
@@ -17,6 +18,9 @@ import java.net.URL;
 import java.util.ArrayList;
 
 public class NetworkTask extends AsyncTask<Integer, String, Object> {
+
+    final static String TAG = "Status";
+
     Context context = null;
     String mAddr = null;
     ProgressDialog progressDialog = null;
@@ -77,6 +81,7 @@ public class NetworkTask extends AsyncTask<Integer, String, Object> {
                 }
                 if(where.equals("select")){
                     parserSelect(stringBuffer.toString());
+                    Log.v(TAG, "Networktask : doInBackground parser Select (execute)");
                 }else {
                     result = parserAction(stringBuffer.toString());
                 }
@@ -93,19 +98,19 @@ public class NetworkTask extends AsyncTask<Integer, String, Object> {
             }
         }
         if(where.equals("select")){
-            return members;
+            return members; //arrayList
         }else {
-            return result;
+            return result; // JSON
         }
     }
 
 
-    private String parserAction(String str) {
+    //List에 넣을 Data를 불러오기 위한 NetworkTesk
+    private String parserAction(String str) { // 입력, 수정, 삭제
         String returnValue = null;
         try {
-            JSONObject jsonObject = new JSONObject(str);
-            jsonObject.getString("result");
-            returnValue = jsonObject.getString("null");
+            JSONObject jsonObject = new JSONObject(str); // 중괄호 시작부터 불러옴
+            returnValue = jsonObject.getString("result");// result에 해당하는 값을 불러옴
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -113,18 +118,20 @@ public class NetworkTask extends AsyncTask<Integer, String, Object> {
         return returnValue;
     }
 
-    private void parserSelect(String str) {
+    private void parserSelect(String str) { // 검색만 가능
         try {
             JSONObject jsonObject = new JSONObject(str);
             JSONArray jsonArray = new JSONArray(jsonObject.getString("students_info"));
-            members.clear();
+            Log.v(TAG, "NetworkTask : parserSelect() students_info (execute)");
+            members.clear(); // data가 있을 경우 지우고 다시 재구성
 
             for (int i = 0; i < jsonArray.length(); i++) {
-                JSONObject jsonObject1 = (JSONObject) jsonObject.get(String.valueOf(i));
+                JSONObject jsonObject1 = (JSONObject) jsonArray.get(i);
                 String code = jsonObject1.getString("code");
-                String name = jsonObject1.getString("dept");
+                String name = jsonObject1.getString("name");
                 String dept = jsonObject1.getString("dept");
                 String phone = jsonObject1.getString("phone");
+                Log.v(TAG,code + ", " + name + ", " + dept + ", " + phone);
 
                 Student member = new Student(code, name, dept, phone);
                 members.add(member);

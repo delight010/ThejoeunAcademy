@@ -46,14 +46,20 @@ public class MainActivity extends AppCompatActivity {
             switch (v.getId()){
                 case R.id.btn_insert:
                     intent = new Intent(MainActivity.this, InsertActivity.class);
-                    //InsertActivity로 이동
+                    //MainActivity -> InsertActivity 좌표 지정
                     intent.putExtra("macIP", tempIp);
-                    startActivity(intent);
+                    startActivity(intent); // 이동
                     break;
                 case R.id.btn_update:
+                    intent = new Intent(MainActivity.this, SelectAllActivity.class);
+                    intent.putExtra("macIP", tempIp);
+                    startActivity(intent);
                     Toast.makeText(MainActivity.this, "검색 후 선택을 짧게 누르면 수정화면으로 이동합니다.", Toast.LENGTH_SHORT).show();
                     break;
                 case R.id.btn_delete:
+                    intent = new Intent(MainActivity.this, SelectAllActivity.class);
+                    intent.putExtra("macIP", tempIp);
+                    startActivity(intent);
                     Toast.makeText(MainActivity.this, "검색 후 선택을 길게 누르면 삭제화면으로 이동합니다.", Toast.LENGTH_SHORT).show();
                     break;
                 case R.id.btn_selectA:

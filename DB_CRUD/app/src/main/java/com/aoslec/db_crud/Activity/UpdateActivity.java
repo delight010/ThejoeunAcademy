@@ -21,15 +21,22 @@ public class UpdateActivity extends AppCompatActivity {
 
     //화면 부분
     EditText ecode, ename, edept, ephone;
-    Button btnInsert;
+    Button btnUpdate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update);
 
+        //intent 전송값 가져오기
         Intent intent = getIntent();
         macIP = intent.getStringExtra("macIP");
+
+        scode = intent.getStringExtra("code");
+        sname = intent.getStringExtra("name");
+        sdept = intent.getStringExtra("dept");
+        sphone = intent.getStringExtra("phone");
+
         urlAddr = "http://" + macIP + ":8080/test/studentUpdateReturn.jsp?";
         //주소 끝 물음표(?) 유의
 
@@ -49,8 +56,14 @@ public class UpdateActivity extends AppCompatActivity {
         edept.setText(sdept);
         ephone.setText(sphone);
 
-        btnInsert = findViewById(R.id.btn_update);
-        btnInsert.setOnClickListener(onClickListener);
+        btnUpdate = findViewById(R.id.update_btn);
+        btnUpdate.setOnClickListener(onClickListener);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        connectInsertData(); // DB를 계속해서 새로 불러올 수 있도록 쓰임(새로고침)
     }
 
     View.OnClickListener onClickListener = new View.OnClickListener() {
@@ -85,4 +98,6 @@ public class UpdateActivity extends AppCompatActivity {
         }
         return result;
     }
-}
+
+
+}////

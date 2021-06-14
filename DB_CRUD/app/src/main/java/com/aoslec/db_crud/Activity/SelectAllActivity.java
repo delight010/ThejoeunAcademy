@@ -33,21 +33,24 @@ public class SelectAllActivity extends AppCompatActivity {
         Intent intent = getIntent();
         macIP = intent.getStringExtra("macIP");
         urlAddr = "http://" + macIP + ":8080/test/student_query_all.jsp";
+        //검색을 하려면 jsp뒤에 ?검색어=검색값을 붙여줘야함
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        connectGetdata();
+        connectGetdata(); // DB를 계속해서 새로 불러올 수 있도록 쓰임(새로고침)
     }
 
     private void connectGetdata() {
         try {
             NetworkTask networkTask = new NetworkTask(SelectAllActivity.this, urlAddr, "select");
             Object obj = networkTask.execute().get();
+            //jsp에서 받아온 내용을 -> arrayList에 추가
             members = (ArrayList<Student>) obj;
 
             adapter = new StudentAdapter(SelectAllActivity.this, R.layout.student_layout, members);
+            //1줄씩 넣어줌(count만큼)
             listView.setAdapter(adapter);
             listView.setOnItemClickListener(onItemClickListener); // 한번 클릭(수정)
             listView.setOnItemLongClickListener(onItemLongClickListener); // 길게 누르기(삭제)
@@ -78,7 +81,7 @@ public class SelectAllActivity extends AppCompatActivity {
 
         @Override
         public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-            intent = new Intent(SelectAllActivity.this, UpdateActivity.class);
+            intent = new Intent(SelectAllActivity.this, DeleteActivity.class);
             intent.putExtra("code", members.get(position).getCode());
             intent.putExtra("name", members.get(position).getName());
             intent.putExtra("dept", members.get(position).getDept());
