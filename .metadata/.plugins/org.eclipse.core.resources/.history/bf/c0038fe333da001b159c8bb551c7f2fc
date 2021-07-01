@@ -1,0 +1,5 @@
+package com.springlec.base0703.command;
+
+public interface BCommand {
+
+}

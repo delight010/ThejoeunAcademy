@@ -1,0 +1,13 @@
+package com.springlec.base0703.dto;
+
+import java.sql.Timestamp;
+
+public class BDto {
+	
+	int bId;
+	String bName;
+	String bTitle;
+	String bContent;
+	Timestamp bDate;
+
+}

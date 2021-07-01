@@ -1,0 +1,28 @@
+package com.springlec.base0703.command;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ui.Model;
+
+import com.springlec.base0703.dao.BDao;
+
+public class BDeleteCommand implements BCommand {
+	//--------------------------------------------
+	// 생성자를 안쓰기 위함
+	//--------------------------------------------
+	
+	private BDao dao = null;
+	
+	@Autowired
+	public void setDao(BDao dao) {
+		this.dao = dao;
+	}
+	
+	//--------------------------------------------
+
+	@Override
+	public void execute(Model model) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
