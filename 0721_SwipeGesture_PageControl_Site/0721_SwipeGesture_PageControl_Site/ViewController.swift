@@ -34,6 +34,8 @@ class ViewController: UIViewController {
         pageControl.pageIndicatorTintColor = UIColor.green // 동그라미 색깔 바꾸기
         pageControl.currentPageIndicatorTintColor = UIColor.red // 현재 동그라미 위치 색깔 바꾸기
         
+        // 한손가락 Gesture 구성
+        makeSingleTouch()
     }
     
     // 사이트 출력
@@ -58,6 +60,54 @@ class ViewController: UIViewController {
     @IBAction func pageChange(_ sender: UIPageControl) {
         let siteUrl = checkUrl(url: siteListTuple[pageControl.currentPage].1) // urlCheck
         loadWebPage(url: siteUrl) // webView 띄우기
+    }
+    
+    // 제스처에 따른 이미지 전환
+    // 1 손가락 터치
+    func makeSingleTouch() {
+        // UP
+        let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(ViewController.respondsToSwipeGesture(_:))) // 인식
+        swipeUp.direction = UISwipeGestureRecognizer.Direction.up
+        self.view.addGestureRecognizer(swipeUp)
+            
+        // Down
+        let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(ViewController.respondsToSwipeGesture(_:))) // 인식
+        swipeDown.direction = UISwipeGestureRecognizer.Direction.down
+        self.view.addGestureRecognizer(swipeDown)
+            
+        // Left
+        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(ViewController.respondsToSwipeGesture(_:))) // 인식
+        swipeLeft.direction = UISwipeGestureRecognizer.Direction.left
+        self.view.addGestureRecognizer(swipeLeft)
+            
+        // Right
+        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(ViewController.respondsToSwipeGesture(_:))) // 인식
+        swipeRight.direction = UISwipeGestureRecognizer.Direction.right
+        self.view.addGestureRecognizer(swipeRight)
+    }
+        
+    // object-c 함수 설정
+    @objc func respondsToSwipeGesture(_ gesture: UIGestureRecognizer){
+        if let swipeGesture = gesture as? UISwipeGestureRecognizer{ // 변환
+                           
+        // 제스처가 들어오면
+        switch swipeGesture.direction{
+            case UISwipeGestureRecognizer.Direction.up:
+                pageControl.currentPage += 1
+                loadWebPage(url: checkUrl(url: siteListTuple[pageControl.currentPage].1))
+            case UISwipeGestureRecognizer.Direction.down:
+                pageControl.currentPage -= 1
+                loadWebPage(url: checkUrl(url: siteListTuple[pageControl.currentPage].1))
+            case UISwipeGestureRecognizer.Direction.left:
+                pageControl.currentPage -= 1
+                loadWebPage(url: checkUrl(url: siteListTuple[pageControl.currentPage].1))
+            case UISwipeGestureRecognizer.Direction.right:
+                pageControl.currentPage += 1
+                loadWebPage(url: checkUrl(url: siteListTuple[pageControl.currentPage].1))
+            default:
+                break
+            }
+        }
     }
 
 
