@@ -1,0 +1,120 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>회원 가입</title>
+</head>
+<script type="text/javascript">
+//모든 공백 체크 정규식
+var empCheck = /^\s+|\s+$/g;
+//아이디 정규식
+var idCheck = /^[a-z]{4,12}$/; // 영어 소문자 4-12자리 가능함
+// 비밀번호 정규식
+var pwCheck = /^[0-9]{4,12}$/; // 숫자 4-12자리 가능함
+// 이름 정규식
+var nameCheck = /^[가-힣]{2,6}$/; // 한글 2-6글자만 가능
+// 이메일 검사 정규식
+var mailCheck = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
+// 휴대폰 번호 정규식
+var phoneCheck = /^[0-9]{4}$/; // 숫자 4자리 가능
+
+
+// 숫자 정규식
+var phoneCheck = /^[0-9]$/; // 숫자만 가능
+
+
+
+	function signCheck(){
+		//emptyCheck
+		var form = document.signForm
+		if(form.id.value==""){
+			alert("아이디를 입력해 주세요!");
+			form.id.focus(); // id tf 포커스
+			return false;
+		}else if(form.pw.value==""){
+			alert("비밀번호를 입력해 주세요!");
+			form.pw.focus(); // pw tf 포커스
+			return false;
+		}else if(form.name.value==""){
+			alert("이름을 입력해 주세요!");
+			form.name.focus(); // tf 포커스
+			return false;
+		}else if(form.phone2.value==""){
+			alert("연락처를 두번째 자리를 입력해 주세요!");
+			form.phone2.focus(); // tf 포커스
+			return false;
+		}else if(form.phone3.value==""){
+			alert("연락처를 세번째 자리를 입력해 주세요!");
+			form.phone3.focus(); // tf 포커스
+			return false;
+		}else if(form.email.value==""){
+			alert("이메일을 입력해 주세요!");
+			form.email.focus(); // tf 포커스
+			return false;
+		}
+		
+		
+		//정규식 유효성 검사
+		if(!idCheck.test(form.id.value)){ 
+			alert("아이디는 영어 소문자 4~12자리 입력해 주세요!");
+			form.id.select(); // 범위를 잡아줌
+			return false;
+		}
+		
+		if(!pwCheck.test(form.pw.value)){
+			alert("비밀번호는 숫자만 4~12자리 입력해 주세요!");
+			form.pw.select(); // 범위를 잡아줌
+			return false;
+		}
+		
+		if(!nameCheck.test(form.name.value)){
+			alert("이름은 한글로 2~6글자만 입력해 주세요!");
+			form.name.select(); // 범위를 잡아줌
+			return false;
+		}
+		
+		if(!phoneCheck.test(form.phone2.value)){
+			alert("연락처는 4자리 숫자만 입력해 주세요!");
+			form.phone2.select(); // 범위를 잡아줌
+			return false;
+		}
+		
+		if(!phoneCheck.test(form.phone3.value)){
+			alert("연락처는 4자리 숫자만 입력해 주세요!");
+			form.phone3.select(); // 범위를 잡아줌
+			return false;
+		}
+		
+		if(!mailCheck.test(form.email.value)){
+			alert("이메일은 id@****.***의 형식으로 입력해 주세요!");
+			form.email.select(); // 범위를 잡아줌
+			return false;
+		}
+		
+		form.submit(); // loginForm 전송
+	}
+
+
+</script>
+<body>
+	<h2>회원 가입</h2>
+	<form name="signForm" action="Validation_05_Process.jsp" method="post">
+	아이디:<input type="text" name="id"><br>
+	비밀번호:<input type="password" name="pw"><br>
+	이름:<input type="text" name="name"><br>
+	연락처:<select name="phone1">
+			<option>010</option>
+			<option>011</option>
+			<option>019</option>
+	</select>
+	-<input type="text" name="phone2" size="5">
+	-<input type="text" name="phone3" size="5"><br>
+	이메일:<input type="text" name="email" size="10"><br>
+	<input type="button" value="가입하기" onclick="signCheck()">
+	
+	</form>
+
+</body>
+</html>
