@@ -1,8 +1,8 @@
 //
 //  DBModel.swift
-//  0727_ServerJSON01
+//  0728_ServerJSON03
 //
-//  Created by TJ on 2021/07/27.
+//  Created by Seong A Oh on 2021/07/28.
 //
 
 import Foundation

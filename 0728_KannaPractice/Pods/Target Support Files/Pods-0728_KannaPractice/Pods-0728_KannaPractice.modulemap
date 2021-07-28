@@ -1,0 +1,6 @@
+framework module Pods_0728_KannaPractice {
+  umbrella header "Pods-0728_KannaPractice-umbrella.h"
+
+  export *
+  module * { export * }
+}

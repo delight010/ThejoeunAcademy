@@ -1,12 +1,13 @@
 //
 //  DBModel.swift
-//  0727_ServerJSON01
+//  0728_DBCRUD
 //
-//  Created by TJ on 2021/07/27.
+//  Created by Seong A Oh on 2021/07/28.
 //
 
 import Foundation
 
+// JAVA의 Bean과 같음
 // Json 사용 시 class에 type을 주는 것이 좋음
 
 class DBModel: NSObject{ // NSObject :: 가장 큰 타입

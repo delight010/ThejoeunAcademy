@@ -1,54 +1,82 @@
 //
 //  TableViewController.swift
-//  0727_ServerJSON01
+//  0728_KannaPractice
 //
-//  Created by TJ on 2021/07/27.
+//  Created by Seong A Oh on 2021/07/28.
 //
 
 import UIKit
+import Kanna
+
+var list: [String] = [] // crawling한 data 값을 넣을 변수
 
 class TableViewController: UITableViewController {
-    @IBOutlet var listTableView: UITableView!
-    var feedItem: NSArray = NSArray() // NSArray 생성, Json의 내용을 넣을 것, 어떤 자료형이 들어올 지 모르기때문에 NSArray로 생성
-    // NextStepArray
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        // extension으로 설정한 것들을 실행
-        let jsonModel = JsonModel() // JsonModel에 설정한 생성자 생성
-        jsonModel.delegate = self
-        jsonModel.downloadItems()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        dataCrawling()
+    }
+    
+    // dataCrawling 메소드 정의
+    func dataCrawling(){
+        let mainUrl = "https://shoppinghow.kakao.com/search/%EC%95%84%EA%B8%B0%20%EC%9A%B0%EC%A3%BC%EB%B3%B5"
+        
+        // 만일 url이 null 이라면
+        guard let main = URL(string: mainUrl) else {
+            print("Error: \(mainUrl) doesn't seem to be a valid URL")
+            return
+        }
+        
+        do{
+            // //*[@id="E5102934697"]/strong/a
+            // //*[@id="C5102818531"]/strong/a
+            
+            // main 주소를 utf8로 인코딩
+            let htmlData = try String(contentsOf: main, encoding: .utf8)
+            // htmlData에 접근 시도 utf8로 인코딩
+            let doc = try HTML(html: htmlData, encoding: .utf8)
+            
+            var count = 1 // 순서 번호를 보여주기 위한 변수
+            for title in doc.xpath("//strong/a") {// xpath는 Python으로 찾든 Xcode로 찾든 동일
+                // 번호와 title을 불러옴.
+                // .trimmingCharacters(in: .whitespacesAndNewlines)를 이용하여 공백을 제거
+                print(count, title.text!.trimmingCharacters(in: .whitespacesAndNewlines))
+                
+                // list 배열에 Data 추가
+                list.append(title.text!.trimmingCharacters(in: .whitespacesAndNewlines))
+                count += 1
+            }
+            
+        }catch let error{
+            print("Error : \(error)")
+        }
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1 // 테이블의 section 수
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return feedItem.count // count된 수 만큼 행을 추가
+        return list.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath)
 
-        // Configure the cell... 셀의 모양 구성
-        // feedItem의 값을 1줄씩 받아와 셀을 구성
-        let item: DBModel = feedItem[indexPath.row] as! DBModel
-        cell.textLabel?.text = "성명 : \(item.sname!)"
-        cell.detailTextLabel?.text = "학번 : \(item.scode!)"
+        // Configure the cell...// cell 내용 구성
+        cell.textLabel?.text = "\(indexPath.row+1): \(list[indexPath.row])"
 
         return cell
     }
@@ -99,13 +127,4 @@ class TableViewController: UITableViewController {
     }
     */
 
-} // TableViewController
-
-
-// JsonModel에 설정한 Protocol 사용
-extension TableViewController: JsonModelProtocol{
-    func itemDownloaded(items: NSArray) {
-        feedItem = items
-        self.listTableView.reloadData() // TableView 재구성
-    }
 }

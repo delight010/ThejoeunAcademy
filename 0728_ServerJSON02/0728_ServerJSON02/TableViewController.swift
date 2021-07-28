@@ -1,25 +1,29 @@
 //
 //  TableViewController.swift
-//  0727_ServerJSON01
+//  0728_ServerJSON02
 //
-//  Created by TJ on 2021/07/27.
+//  Created by Seong A Oh on 2021/07/28.
 //
 
 import UIKit
 
 class TableViewController: UITableViewController {
-    @IBOutlet var listTableView: UITableView!
+    @IBOutlet var listTableView: UITableView! // UITableView! 인것을 확인
     var feedItem: NSArray = NSArray() // NSArray 생성, Json의 내용을 넣을 것, 어떤 자료형이 들어올 지 모르기때문에 NSArray로 생성
     // NextStepArray
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
         // extension으로 설정한 것들을 실행
         let jsonModel = JsonModel() // JsonModel에 설정한 생성자 생성
         jsonModel.delegate = self
         jsonModel.downloadItems()
+        
+        // Cell의 크기를 정의
+        listTableView.rowHeight = 124 // 세로폭의 길이
+        
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -32,23 +36,28 @@ class TableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1 // 테이블의 section 수
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return feedItem.count // count된 수 만큼 행을 추가
+        return feedItem.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath)
+        // as! TableViewCell   ::   cell -> TableViewCell로 변환
+        let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath) as! TableViewCell
 
         // Configure the cell... 셀의 모양 구성
         // feedItem의 값을 1줄씩 받아와 셀을 구성
         let item: DBModel = feedItem[indexPath.row] as! DBModel
-        cell.textLabel?.text = "성명 : \(item.sname!)"
-        cell.detailTextLabel?.text = "학번 : \(item.scode!)"
+        
+        // TableViewCell에서 정한 이름으로 재정의
+        cell.lblCode.text = "학번: \(item.scode!)"
+        cell.lblName.text = "성명: \(item.sname!)"
+        cell.lblDept.text = "전공: \(item.sdept!)"
+        cell.lblPhone.text = "전화: \(item.sphone!)"
 
         return cell
     }
@@ -100,7 +109,6 @@ class TableViewController: UITableViewController {
     */
 
 } // TableViewController
-
 
 // JsonModel에 설정한 Protocol 사용
 extension TableViewController: JsonModelProtocol{
