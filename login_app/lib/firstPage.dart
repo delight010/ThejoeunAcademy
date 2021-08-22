@@ -32,7 +32,7 @@ class _FirstPageState extends State<FirstPage> {
               TextField(
                 controller: id_textEditingController,
                 decoration: InputDecoration(labelText: '사용자 ID 입력하세요'),
-                keyboardType: TextInputType.number,
+                keyboardType: TextInputType.text,
               ),
               TextField(
                 controller: pw_textEditingController,
