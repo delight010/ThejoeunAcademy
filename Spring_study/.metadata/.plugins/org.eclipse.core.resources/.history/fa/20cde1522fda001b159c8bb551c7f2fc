@@ -1,0 +1,26 @@
+package com.springlec.base0703.dao;
+
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.sql.DataSource;
+
+public class BDao {
+
+	DataSource dataSource;
+	
+	public BDao() {
+		// TODO Auto-generated constructor stub
+		try {
+			Context context = new InitialContext();
+			dataSource = (DataSource) context.lookup("java:comp/env/jdbc/mvc");
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+	}
+	
+	
+	// 초기화면 리스트(검색)
+	
+	
+}

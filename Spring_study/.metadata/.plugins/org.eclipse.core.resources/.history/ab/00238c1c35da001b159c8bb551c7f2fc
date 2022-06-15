@@ -1,0 +1,11 @@
+package com.springlec.base0703.controller;
+
+import com.springlec.base0703.command.BCommand;
+
+public class BController {
+	
+	BCommand bCommand = null;
+	
+	
+
+}

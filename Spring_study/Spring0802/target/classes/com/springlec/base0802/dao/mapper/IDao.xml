@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+    <!-- Spring JDBC로 바꾸어 전송 -->
+    
+<mapper namespace="com.springlec.base0802.dao.IDao">
+	<!-- 리스트 보기 -->
+	<select id="listDao" resultType="com.springlec.base0802.dto.ContentDto">
+		SELECT * FROM ADDRESSINFO ORDER BY SEQ DESC
+	</select>
+	
+	<!-- 글 작성 -->
+	<insert id="writeDao">
+		INSERT INTO ADDRESSINFO (NAME, TEL, ADDRESS, EMAIL, RELATION) values(#{param1}, #{param2}, #{param3}, #{param4}, #{param5})
+	<!-- values(#{param1}, #{param2})는 values (?, ?)와 같음 -->
+	</insert>
+	
+	<!-- 글 내용 보기 -->
+	<select id="contentViewDao" resultType="com.springlec.base0802.dto.ContentDto">
+		SELECT * FROM ADDRESSINFO WHERE SEQ = #{param1}
+	</select>
+	
+	<!-- 글 수정 -->
+	<update id="editDao">
+		UPDATE ADDRESSINFO SET NAME = #{param2}, TEL = #{param3}, ADDRESS = #{param4}, EMAIL = #{param5}, RELATION = #{param6}  WHERE SEQ = #{param1}
+	<!-- values(#{param1}, #{param2})는 values (?, ?)와 같음 -->
+	</update>
+	
+	
+	<!-- 삭제 -->
+	<delete id="deleteDao">
+		DELETE FROM ADDRESSINFO WHERE SEQ = (#{param1})
+	</delete>
+	
+	
+	<!-- 검색    컬럼이름:$ / 값은 # -->
+	<select id="listQuery" parameterType="String" resultType="com.springlec.base0802.dto.ContentDto">
+		SELECT * FROM ADDRESSINFO WHERE ${param1} LIKE CONCAT('%', #{param2}, '%')
+	</select>
+	
+	
+</mapper>

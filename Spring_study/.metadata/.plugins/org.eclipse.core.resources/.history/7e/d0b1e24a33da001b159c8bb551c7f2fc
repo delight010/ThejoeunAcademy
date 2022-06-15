@@ -1,0 +1,31 @@
+package com.springlec.base0703.dao;
+
+import java.util.ArrayList;
+
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.sql.DataSource;
+
+import org.springframework.jdbc.core.JdbcTemplate;
+
+import com.springlec.base0701.utill.Constant;
+
+public class BDao {
+
+	DataSource dataSource;
+	// servlet-context.xml 에서 만들어준 template
+	private JdbcTemplate template;
+	
+	public BDao() {
+		this.template = Constant.template;
+	}
+	
+	
+	// 초기화면 리스트(검색)
+	public ArrayList<BDto> list(){
+		//2줄로 줄이기
+		ArrayList<BDto> dtos = new ArrayList<BDto>();
+		
+	}
+	
+}

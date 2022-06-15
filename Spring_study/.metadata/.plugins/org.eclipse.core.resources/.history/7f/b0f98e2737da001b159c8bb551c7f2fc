@@ -1,0 +1,28 @@
+package com.springlec.base0703.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.springlec.base0703.command.BCommand;
+
+@Controller
+public class BController {
+	
+	//-----------------------------------------------
+	// 생성자를 안쓰기 위함
+	//-----------------------------------------------
+	
+	BCommand command = null;
+	
+	// 리스트 페이지 보기
+	@RequestMapping("/list")
+	public String list(Model model) {
+		System.out.println("list()");
+		
+		return "list"; // list.jsp로 이동
+	}
+	
+	
+
+}
