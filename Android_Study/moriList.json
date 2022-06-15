@@ -1,0 +1,98 @@
+[
+	{
+		"code" : 1,
+		"profile" : "https://w.namu.la/s/7aafc320cf827bfcbf741c8742d70c7210c534e25202fc849c4eaa617875b2c1337b2b19975e4e08f55fc8bd1064aaa9a3a5ae8cacb3efe8b016a19b1d73e197d1f3fce633940467cd26ca541823f32b000bb62f285b19e11167a84ec81bf9cecabe18fbed3d0431f297ea4a626d8baf",
+		"name" : "여울",
+		"gender" : "여",
+		"chara" : "친절함",
+		"birth" : "12/20"
+	},
+	{
+		"code" : 2,
+		"profile" : "https://w.namu.la/s/24ec2894d9f53cf801c7b1326485cc966ae2325524a308ae1f05b90608d324375f26a928d5d06c65525f82ffb06b4f9cbc91d3cbda472564edb138be2fe8e51870903f440779a41c0a808ef435f53da64689e99cb08d7416e38c56d87ad5154c",
+		"name" : "귀오미",
+		"gender" : "여",
+		"chara" : "친절함",
+		"birth" : "3/7"
+	},
+	{
+		"code" : 3,
+		"profile" : "https://w.namu.la/s/8364eaf2803a10a77b967256b5a5aee24dc36bbc59f3430abb57651d0ba246eddc6b6c23f5f2e09dc73f6257aad0b9279a8e0d63c9982393829539482d15335d5edad1c7abd58dafb0db42ec6c96b222863d68e10553c6a946eaaa280c3b1c84d9a07fb5124ac22ae8540173d081241e",
+		"name" : "메리어스",
+		"gender" : "여",
+		"chara" : "친절함",
+		"birth" : "4/16"
+	},
+	{
+		"code" : 4,
+		"profile" : "https://ww.namu.la/s/b2e031db23d56be4180e3b3892e38bfa43ec7bbf56efabc1c8c8b18ba58ce5cd1848220982f309cbb2e5d60dd58c69a2439a67cf9fab4c343b9fbcd2721edb0c0733ab743330aa44e8a437d176e9004b9e864f5a78e9361b7bf0586478e7261368e0114cdc225fee5a0212b4479c08eb",
+		"name" : "시베리아",
+		"gender" : "남",
+		"chara" : "무뚝뚝",
+		"birth" : "12/18"
+	},
+	{
+		"code" : 5,
+		"profile" : "https://w.namu.la/s/f736e1f82c79b5d438bae227d7e087547e9d3221ed4c2589fab9d1bdf6a94caf82a63346dfff2cd01bc0d1ce15f20638d76a679a5038da4e460c9e97e5c696ca2ddfd8f8910c311d35960f9afd7c689f89e53b7c81e2d0076cca7fc08b340d24",
+		"name" : "나탈리",
+		"gender" : "여",
+		"chara" : "성숙함",
+		"birth" : "1/4"
+	},
+	{
+		"code" : 6,
+		"profile" : "https://w.namu.la/s/b5b0a499dfe5468ad3922e4d318d7609a86504ee94b358554435599aedb5aa2beaceb6fe6e6026172d624b426d8bf155bf2349ae5d3d9eebe630d3d622c7d5b2dad0f33580b66ee0840493e33b91a9b8030e1ee388ade1b9d13ffcbb5064c8f2",
+		"name" : "홉킨스",
+		"gender" : "남",
+		"chara" : "먹보",
+		"birth" : "3/11"
+	},
+	{
+		"code" : 7,
+		"profile" : "https://ww.namu.la/s/f5981d3862b21e0a32077a7f08faaf0fd93eeef543cc528e96848ec1971204e39fcd0df24429df082aad38246fb49a75cf141e5289efabe86668b729125d1b108e7636be8023f5e1ab3ec5f20ade8b59bc3eeb1c20d23207c3b68c2b2d166539",
+		"name" : "패치",
+		"gender" : "남",
+		"chara" : "먹보",
+		"birth" : "2/10"
+	},
+	{
+		"code" : 8,
+		"profile" : "https://w.namu.la/s/063133c65267d11e48315df5f505cfc0e6ee805f7410fdc9b0eeb2e37667a1a9d3b30767280121d5a6c6df6747cfa34920a54f04ff8f9e55bcfd8257750c9127e396e312032eb079a9ae03f7b95e614f27730db9bc92cfe9b09f764cc661530c",
+		"name" : "잭슨",
+		"gender" : "남",
+		"chara" : "느끼함",
+		"birth" : "10/1"
+	},
+	{
+		"code" : 9,
+		"profile" : "https://ww.namu.la/s/f6d42a4b3337df2659b07c68b40071c7216f4a68a6ef4e127e8b2df17f717590c42641f634303f77c9cfef32b5a7386f22f47de8efc2e89d3f8a9ba3a763327b402f48dab67c27bb99bc719708d8c8fa973f2674266af92f0416f41d89589b0e",
+		"name" : "쭈니",
+		"gender" : "남",
+		"chara" : "느끼함",
+		"birth" : "9/29"
+	},
+	{
+		"code" : 10,
+		"profile" : "https://ww.namu.la/s/e865d080c843a5226843e4fd309a220c58543bc2690a0ed6ea81670e6ced384a98d8ff311aee19f1ddbb26d6348de36873f9265f49751fb12670f7e1512ff83a7b92eeeb7c78b8849e715afd84477facede22399e636d10c69dbbec9395e9868",
+		"name" : "백희",
+		"gender" : "여",
+		"chara" : "아이돌",
+		"birth" : "12/13"
+	},
+	{
+		"code" : 11,
+		"profile" : "https://w.namu.la/s/f70be7f4babd1d34669cd01dd4d96ac5c72d3d84044e496c4d8a1ec1a53d00dff9f8bfcd987b8d5c7c031bff6ad5b78195663ffb4ea321708c7e5632144986b0fa711adb265f8e3fe2b911aad31b633d1f85d9c47e19b73e592b69347b1e80955623d064c8fb858d200165986e42812d",
+		"name" : "플라라",
+		"gender" : "여",
+		"chara" : "아이돌",
+		"birth" : "2/9"
+	},
+	{
+		"code" : 12,
+		"profile" : "https://ww.namu.la/s/8400e9cdf40c39126a0489ffc9aa6ace78dda86a6f59da772ad7cce615e01a653989c68773ef8c00075c34f4687feaa331799aa4087a66bbd1bdea8549a00f243a63d8e863183ce1829a85fe746c02177870393ef0b03d7281547adde79a1847",
+		"name" : "네이아",
+		"gender" : "여",
+		"chara" : "단순활발",
+		"birth" : "1/16"
+	}
+]

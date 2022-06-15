@@ -1,0 +1,25 @@
+package com.asolec.editlimit;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.text.InputFilter;
+import android.text.Spanned;
+import android.widget.EditText;
+
+public class MainActivity extends AppCompatActivity {
+
+    EditText editText;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        editText = findViewById(R.id.limit);
+        editText.setFilters(new InputFilter[]{
+                new InputFilter.LengthFilter(3)
+                //3글자만 입력될 수 있음
+        });
+    }
+}

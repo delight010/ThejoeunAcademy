@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    tools:context=".MainActivity"
+    >
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/LINEAR1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="LINEAR1"
+            android:insetRight="20dp"
+            />
+
+        <Button
+            android:id="@+id/LINEAR2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="LINEAR2"
+            android:insetLeft="20dp"
+            />
+
+    </LinearLayout>
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <!-- frame1 -->
+        <LinearLayout
+            android:id="@+id/frame1"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible">
+
+            <Button
+                android:id="@+id/LINEAR1_BTN1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="LINEAR1BUTTON1"
+                android:backgroundTint="#E91E63"
+                android:layout_marginTop="5dp"
+                />
+
+            <Button
+                android:id="@+id/LINEAR1_BTN2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="LINEAR1BUTTON2"
+                android:backgroundTint="#E91E63"
+                android:layout_marginTop="5dp"
+                />
+        </LinearLayout>
+
+
+
+        <!-- frame2 -->
+        <LinearLayout
+            android:id="@+id/frame2"
+            android:visibility="invisible"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/LINEAR2_BTN1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="LINEAR2BUTTON1"
+                android:backgroundTint="#00BCD4"
+                android:layout_marginTop="5dp"
+                />
+
+            <Button
+                android:id="@+id/LINEAR2_BTN2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="LINEAR2BUTTON2"
+                android:backgroundTint="#00BCD4"
+                android:layout_marginTop="5dp"
+                />
+        </LinearLayout>
+    </FrameLayout>
+
+
+
+</LinearLayout>
